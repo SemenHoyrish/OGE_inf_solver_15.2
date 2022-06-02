@@ -7,6 +7,7 @@ class SolverSettings:
     end_of_sequence = None
 
     should_divisible_by = []
+    should_undivisible_by = []
     should_end_with = None
     should_length_of = None
 

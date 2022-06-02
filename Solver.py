@@ -23,6 +23,10 @@ class Solver:
             if num % d != 0:
                 return
 
+        for ud in self.settings.should_undivisible_by:
+            if num % ud == 0:
+                return
+
         if (self.settings.should_end_with != None
             and not str(num).endswith(self.settings.should_end_with)): return
 
@@ -55,7 +59,8 @@ class Solver:
 
 if __name__ == "__main__":
     settings = SolverSettings()
-    settings.should_divisible_by = [2, 7]
+    # settings.should_divisible_by = [2, 7]
+    # settings.should_undivisible_by = [2]
     settings.end_of_sequence = 0
 
     solver = Solver(settings)
